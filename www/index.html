@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🔍 Unicode Explorer</h1>
+            <div class="controls">
+                <input type="text" id="search" placeholder="Search by name or U+XXXX...">
+                <select id="plane-select">
+                    <option value="0">Plane 0: Basic Multilingual (BMP)</option>
+                    <option value="1">Plane 1: Supplementary Multilingual (SMP)</option>
+                    <option value="2">Plane 2: Supplementary Ideographic (SIP)</option>
+                    <option value="3">Plane 3: Tertiary Ideographic (TIP)</option>
+                    <option value="14">Plane 14: Supplementary Special-purpose (SSP)</option>
+                    <option value="15">Plane 15: Private Use Area A</option>
+                    <option value="16">Plane 16: Private Use Area B</option>
+                </select>
+                <div class="zoom-controls">
+                    <button id="zoom-out">−</button>
+                    <span id="zoom-level">100%</span>
+                    <button id="zoom-in">+</button>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <canvas id="canvas"></canvas>
+            
+            <aside id="info-panel">
+                <h2>Character Info</h2>
+                <div id="char-display">?</div>
+                <dl>
+                    <dt>Codepoint</dt>
+                    <dd id="info-codepoint">—</dd>
+                    <dt>Name</dt>
+                    <dd id="info-name">—</dd>
+                    <dt>Category</dt>
+                    <dd id="info-category">—</dd>
+                    <dt>Block</dt>
+                    <dd id="info-block">—</dd>
+                </dl>
+                <button id="copy-char" disabled>Copy Character</button>
+            </aside>
+        </main>
+        
+        <footer>
+            <div class="legend">
+                <span class="legend-item"><span class="swatch letters"></span> Letters</span>
+                <span class="legend-item"><span class="swatch numbers"></span> Numbers</span>
+                <span class="legend-item"><span class="swatch symbols"></span> Symbols</span>
+                <span class="legend-item"><span class="swatch punctuation"></span> Punctuation</span>
+                <span class="legend-item"><span class="swatch marks"></span> Marks</span>
+                <span class="legend-item"><span class="swatch control"></span> Control</span>
+                <span class="legend-item"><span class="swatch unassigned"></span> Unassigned</span>
+            </div>
+            <div class="help">Drag to pan • Scroll to zoom • Click to select</div>
+        </footer>
+    </div>
+    
+    <script type="module" src="main.js"></script>
+</body>
+</html>
